@@ -48,11 +48,11 @@ public class VistaFrame extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel imagen = new JLabel("");
-		imagen.setBounds(118, 33, 506, 498);
+		imagen.setBounds(22, 67, 526, 507);
 		contentPane.add(imagen);
 		
 		
-		imagen.setIcon(new ImageIcon("C:\\Users\\david\\OneDrive\\Escritorio\\2º CFGS DAM\\Desarrollo de Interfaces\\Workspace Desarrollo de Interfaces\\ProyectoMeteo\\src\\imagenes\\mapa.png"));
+		imagen.setIcon(new ImageIcon("src\\imagenes\\mapa.png"));
 		
 	}
 }
