@@ -35,6 +35,7 @@ public class VistaFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public VistaFrame() {
+		setTitle("El Tiempo");
 		getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
@@ -48,11 +49,11 @@ public class VistaFrame extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel imagen = new JLabel("");
-		imagen.setBounds(22, 105, 435, 360);
+		imagen.setBounds(10, 28, 616, 658);
 		contentPane.add(imagen);
 		
 		
-		imagen.setIcon(new ImageIcon("src\\imagenes\\mapa.png"));
+		imagen.setIcon(new ImageIcon("C:\\Users\\david\\git\\ProyectoMETEO_Montero_Mu-oz\\src\\imagenes\\mapa.png"));
 		
 	}
 }
