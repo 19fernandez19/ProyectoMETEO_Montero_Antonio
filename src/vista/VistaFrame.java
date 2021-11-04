@@ -48,7 +48,7 @@ public class VistaFrame extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel imagen = new JLabel("");
-		imagen.setBounds(22, 67, 526, 507);
+		imagen.setBounds(22, 105, 435, 360);
 		contentPane.add(imagen);
 		
 		

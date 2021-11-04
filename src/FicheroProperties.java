@@ -1,4 +1,5 @@
 import java.io.*;
+
 import java.util.ArrayList;
 import java.util.Properties;
 
@@ -9,6 +10,8 @@ public class FicheroProperties {
 		
 		Properties propiedades = new Properties();
 		InputStream entrada = null;
+		
+		ArrayList listaCiudades = new ArrayList();
 		
 		
 		try {
