@@ -21,6 +21,7 @@ import vista.Vista;
 
 public class Modelo {
 	
+	
 	//Esta clase busca la URL en el .properties y vuelca la informacion en la clase JAVA
 	
 	public Objeto buscarDatos(String ciudad) throws FileNotFoundException, IOException {
@@ -49,8 +50,7 @@ public class Modelo {
 	 }
 	 
 	//Este metodo sirve para buscar la URL en el .properties
- 	
-	 public String obtenerCodigoFuente(String url) throws IOException{
+	public String obtenerCodigoFuente(String url) throws IOException{
 	     URL urlpagina = null;
 	     InputStreamReader inputStreamReader = null;
 	     BufferedReader br = null;
@@ -81,60 +81,6 @@ public class Modelo {
 	     }
 	     return buffer.toString();
 	   }
-	 
-	 public void llenarInterfaz(Vista frame, Objeto objeto) {
-
-		 try {
-			 
-			//Lista de los dias 
-			List<ForecastDay> dias = objeto.getCity().getForecast().getForecastDay();
-			
-			//Obtenemos el nombre de la ciudad seleccionado para imprimirlo en la interfaz
-			frame.textRCiudad.setText(objeto.getCity().getCityName());
-			
-			for (int i = 0; i < 4; i++) {
 	
-				ForecastDay fore = dias.get(i);
-				if (i==0) {
-					
-					//Obtenemos el clima, la temperatura maxina y minima y la imprimimos en la interfaz
-					frame.textRClima1.setText(fore.getWeather());
-					frame.textRTMax1.setText(fore.getMaxTemp());
-					frame.textRTMin1.setText(fore.getMinTemp());
-					if(fore.getWeatherIcon().equals("2402")) {
-						frame.labelIcon.setIcon(new ImageIcon("src\\imagenes\\mostlycloudy.png"));
-					}
-				}else if (i==1) {
-					
-					//Obtenemos el clima, la temperatura maxina y minima y la imprimimos en la interfaz
-					frame.textRClima2.setText(fore.getWeather());
-					frame.textRTMax2.setText(fore.getMaxTemp());
-					frame.textRTMin2.setText(fore.getMinTemp());
-					
-				}else if (i==2) {
-					
-					//Obtenemos el clima, la temperatura maxina y minima y la imprimimos en la interfaz
-					frame.textRClima3.setText(fore.getWeather());
-					frame.textRTMax3.setText(fore.getMaxTemp());
-					frame.textRTMin3.setText(fore.getMinTemp());	
-					frame.panelDia3.setBorder((new TitledBorder(null, fore.getForecastDate(), TitledBorder.LEADING, TitledBorder.TOP, null, null)));
-
-				}else if (i==3) {
-					frame.textRClima4.setText(fore.getWeather());
-					frame.textRTMax4.setText(fore.getMaxTemp());
-					frame.textRTMin4.setText(fore.getMinTemp());	
-					
-						
-					
-					frame.panelDia4.setBorder((new TitledBorder(null, fore.getForecastDate(), TitledBorder.LEADING, TitledBorder.TOP, null, null)));
-
-				}
-			}
-			
-		 } catch (Exception e) {
-				e.printStackTrace();
-		 }
-		
-	 }
 	
 } 

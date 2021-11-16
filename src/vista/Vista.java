@@ -37,6 +37,7 @@ public class Vista extends JFrame {
 	public JTextField textRClima1;
 	public JTextField textRTMax1;
 	public JTextField textRTMin1;
+	public JLabel labelIcon;
 	
 	//DIA 2
 	public JTextField textRTMin2;
@@ -52,16 +53,16 @@ public class Vista extends JFrame {
 	public JTextField textRClima4;
 	public JTextField textRTMax4;
 	public JTextField textRTMin4;
-	public JLabel labelIcon;
 	
 	
+	public JPanel panelDias;
 	
 	
 	public JPanel panelDia3;
 	public JPanel panelDia4;
 	public JTextField textRCiudad;
 	private JPanel panelPrincipal;
-	private JLabel lblNewLabel;
+	private JLabel textCiudad;
 	
 	
 	/**
@@ -82,7 +83,7 @@ public class Vista extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(224, 255, 255));
-		panel.setBounds(0, 0, 1002, 835);
+		panel.setBounds(0, 0, 1002, 798);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
@@ -121,42 +122,6 @@ public class Vista extends JFrame {
 		/**
 		 * PANEL DIA 4
 		 */
-		panelDia4 = new JPanel();
-		panelDia4.setBackground(new Color(255, 255, 255));
-		panelDia4.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panelDia4.setBounds(643, 614, 325, 140);
-		panel.add(panelDia4);
-		panelDia4.setLayout(null);
-		
-		textRClima4 = new JTextField();
-		textRClima4.setBackground(new Color(255, 255, 255));
-		textRClima4.setBounds(71, 89, 180, 27);
-		panelDia4.add(textRClima4);
-		textRClima4.setBorder(null);
-		textRClima4.setHorizontalAlignment(SwingConstants.CENTER);
-		textRClima4.setFont(new Font("Tahoma", Font.BOLD, 15));
-		textRClima4.setEditable(false);
-		textRClima4.setColumns(10);
-		
-		textRTMax4 = new JTextField();
-		textRTMax4.setBackground(new Color(255, 255, 255));
-		textRTMax4.setBounds(10, 52, 76, 27);
-		panelDia4.add(textRTMax4);
-		textRTMax4.setHorizontalAlignment(SwingConstants.CENTER);
-		textRTMax4.setForeground(Color.RED);
-		textRTMax4.setFont(new Font("Tahoma", Font.BOLD, 15));
-		textRTMax4.setEditable(false);
-		textRTMax4.setColumns(10);
-		
-		textRTMin4 = new JTextField();
-		textRTMin4.setBackground(new Color(255, 255, 255));
-		textRTMin4.setBounds(234, 52, 81, 27);
-		panelDia4.add(textRTMin4);
-		textRTMin4.setHorizontalAlignment(SwingConstants.CENTER);
-		textRTMin4.setForeground(Color.BLUE);
-		textRTMin4.setFont(new Font("Tahoma", Font.BOLD, 15));
-		textRTMin4.setEditable(false);
-		textRTMin4.setColumns(10);
 		
 		
 		
@@ -175,55 +140,58 @@ public class Vista extends JFrame {
 		panel.add(panelPrincipal);
 		panelPrincipal.setLayout(null);
 		
-		lblNewLabel = new JLabel("CIUDAD");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Agency FB", Font.BOLD | Font.ITALIC, 40));
-		lblNewLabel.setBounds(10, 37, 156, 35);
-		panelPrincipal.add(lblNewLabel);
+		textCiudad = new JLabel("CIUDAD");
+		textCiudad.setHorizontalAlignment(SwingConstants.CENTER);
+		textCiudad.setFont(new Font("Agency FB", Font.BOLD | Font.ITALIC, 40));
+		textCiudad.setBounds(10, 37, 156, 40);
+		panelPrincipal.add(textCiudad);
 		
 		comboBox = new JComboBox();
-		comboBox.setBounds(176, 37, 145, 35);
+		comboBox.setBounds(176, 37, 145, 40);
 		panelPrincipal.add(comboBox);
 		comboBox.setFont(new Font("Agency FB", Font.BOLD, 30));
 		
 		btnBuscar= new  JButton("Buscar");
-		btnBuscar.setBounds(344, 39, 104, 34);
+		btnBuscar.setBounds(344, 39, 104, 40);
 		panelPrincipal.add(btnBuscar);
-		btnBuscar.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnBuscar.setFont(new Font("Agency FB", Font.BOLD, 25));
 		
+		/**
+		 * PANEL DIAS
+		 */
+		
+		panelDias = new JPanel();
+		panelDias.setBorder(null);
+		panelDias.setVisible(false);
+		panelDias.setBackground(new Color(255, 255, 255));
+		panelDias.setBounds(630, 0, 372, 799);
+		panel.add(panelDias);
+		panelDias.setLayout(null);
 		
 		/**
 		 * PANEL DIA 1
 		 */
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(255, 255, 255));
-		panel_1.setBounds(630, 0, 383, 799);
-		panel.add(panel_1);
-		panel_1.setLayout(null);
-		
-		
 		
 		textRCiudad = new JTextField();
 		textRCiudad.setEnabled(false);
-		textRCiudad.setBounds(0, 21, 373, 46);
-		panel_1.add(textRCiudad);
+		textRCiudad.setBounds(0, 21, 373, 60);
+		panelDias.add(textRCiudad);
 		textRCiudad.setHorizontalAlignment(SwingConstants.CENTER);
 		textRCiudad.setBackground(new Color(255, 255, 255));
 		textRCiudad.setBorder(null);
 		textRCiudad.setFont(new Font("Agency FB", Font.BOLD | Font.ITALIC, 50));
 		textRCiudad.setColumns(10);
+		
 		JPanel panelDia1 = new JPanel();
-		panelDia1.setBounds(0, 78, 373, 221);
-		panel_1.add(panelDia1);
+		panelDia1.setBounds(0, 78, 370, 220);
+		panelDias.add(panelDia1);
 		panelDia1.setBackground(new Color(255, 255, 255));
 		panelDia1.setBorder(null);
 		panelDia1.setLayout(null);
 		
-		JLabel labelTempMaxIcon;
-		
 		textRClima1 = new JTextField();
 		textRClima1.setBackground(new Color(255, 255, 255));
-		textRClima1.setBounds(0, 139, 373, 42);
+		textRClima1.setBounds(0, 139, 370, 42);
 		textRClima1.setBorder(null);
 		panelDia1.add(textRClima1);
 		textRClima1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -231,7 +199,7 @@ public class Vista extends JFrame {
 		textRClima1.setEditable(false);
 		textRClima1.setColumns(10);
 		
-		JLabel lblTMax1 = new JLabel("Tª Maxima");
+		JLabel lblTMax1 = new JLabel("Tª Máxima");
 		lblTMax1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTMax1.setBounds(26, 51, 79, 27);
 		panelDia1.add(lblTMax1);
@@ -239,7 +207,7 @@ public class Vista extends JFrame {
 		
 		textRTMax1 = new JTextField();
 		textRTMax1.setBackground(new Color(255, 255, 255));
-		textRTMax1.setBounds(36, 82, 61, 47);
+		textRTMax1.setBounds(26, 82, 79, 47);
 		textRTMax1.setBorder(null);
 		panelDia1.add(textRTMax1);
 		textRTMax1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -250,7 +218,7 @@ public class Vista extends JFrame {
 		
 		textRTMin1 = new JTextField();
 		textRTMin1.setBackground(new Color(255, 255, 255));
-		textRTMin1.setBounds(276, 82, 61, 47);
+		textRTMin1.setBounds(267, 82, 79, 47);
 		textRTMin1.setBorder(null);
 		panelDia1.add(textRTMin1);
 		textRTMin1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -259,25 +227,29 @@ public class Vista extends JFrame {
 		textRTMin1.setEditable(false);
 		textRTMin1.setColumns(10);
 		
-		JLabel lblTMin1 = new JLabel("Tª Minima");
-		lblTMin1.setBounds(276, 51, 72, 27);
+		JLabel lblTMin1 = new JLabel("Tª Mínima");
+		lblTMin1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTMin1.setBounds(267, 51, 79, 27);
 		panelDia1.add(lblTMin1);
 		lblTMin1.setFont(new Font("Agency FB", Font.BOLD, 20));
 		
 		
 
 		labelIcon = new JLabel("");
-		labelIcon.setBounds(125, 22, 137, 122);
+		labelIcon.setHorizontalAlignment(SwingConstants.CENTER);
+		labelIcon.setBounds(115, 10, 138, 122);
 		panelDia1.add(labelIcon);
 		labelIcon.setBackground(new Color(255, 255, 255));
+		
+		
 		
 		/**
 		 * PANEL DIA 3
 		 */
 		panelDia3 = new JPanel();
 		panelDia3.setBackground(new Color(255, 255, 255));
-		panelDia3.setBounds(30, 459, 325, 140);
-		panel_1.add(panelDia3);
+		panelDia3.setBounds(0, 459, 372, 140);
+		panelDias.add(panelDia3);
 		panelDia3.setLayout(null);
 		panelDia3.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		
@@ -333,20 +305,14 @@ public class Vista extends JFrame {
 		 */
 		JPanel panelDia2 = new JPanel();
 		panelDia2.setBackground(new Color(255, 255, 255));
-		panelDia2.setBounds(30, 309, 325, 140);
-		panel_1.add(panelDia2);
+		panelDia2.setBounds(0, 309, 372, 140);
+		panelDias.add(panelDia2);
 		panelDia2.setLayout(null);
-		panelDia2.setBorder(new TitledBorder(null, "MAÑANA", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		
-		JLabel lblClima2 = new JLabel("Clima");
-		lblClima2.setHorizontalAlignment(SwingConstants.TRAILING);
-		lblClima2.setBounds(112, 20, 78, 27);
-		panelDia2.add(lblClima2);
-		lblClima2.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		panelDia2.setBorder(null);
 		
 		textRClima2 = new JTextField();
 		textRClima2.setBackground(new Color(255, 255, 255));
-		textRClima2.setBounds(10, 46, 180, 27);
+		textRClima2.setBounds(10, 85, 180, 27);
 		panelDia2.add(textRClima2);
 		textRClima2.setHorizontalAlignment(SwingConstants.RIGHT);
 		textRClima2.setFont(new Font("Tahoma", Font.BOLD, 15));
@@ -382,6 +348,42 @@ public class Vista extends JFrame {
 		textRTMin2.setFont(new Font("Tahoma", Font.BOLD, 15));
 		textRTMin2.setEditable(false);
 		textRTMin2.setColumns(10);
+		panelDia4 = new JPanel();
+		panelDia4.setBounds(0, 609, 373, 140);
+		panelDias.add(panelDia4);
+		panelDia4.setBackground(new Color(255, 255, 255));
+		panelDia4.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panelDia4.setLayout(null);
+		
+		textRClima4 = new JTextField();
+		textRClima4.setBackground(new Color(255, 255, 255));
+		textRClima4.setBounds(71, 89, 180, 27);
+		panelDia4.add(textRClima4);
+		textRClima4.setBorder(null);
+		textRClima4.setHorizontalAlignment(SwingConstants.CENTER);
+		textRClima4.setFont(new Font("Tahoma", Font.BOLD, 15));
+		textRClima4.setEditable(false);
+		textRClima4.setColumns(10);
+		
+		textRTMax4 = new JTextField();
+		textRTMax4.setBackground(new Color(255, 255, 255));
+		textRTMax4.setBounds(10, 52, 76, 27);
+		panelDia4.add(textRTMax4);
+		textRTMax4.setHorizontalAlignment(SwingConstants.CENTER);
+		textRTMax4.setForeground(Color.RED);
+		textRTMax4.setFont(new Font("Tahoma", Font.BOLD, 15));
+		textRTMax4.setEditable(false);
+		textRTMax4.setColumns(10);
+		
+		textRTMin4 = new JTextField();
+		textRTMin4.setBackground(new Color(255, 255, 255));
+		textRTMin4.setBounds(234, 52, 81, 27);
+		panelDia4.add(textRTMin4);
+		textRTMin4.setHorizontalAlignment(SwingConstants.CENTER);
+		textRTMin4.setForeground(Color.BLUE);
+		textRTMin4.setFont(new Font("Tahoma", Font.BOLD, 15));
+		textRTMin4.setEditable(false);
+		textRTMin4.setColumns(10);
 		
 		/**
 		 * COMBO BOX
