@@ -4,9 +4,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties (ignoreUnknown = true)
 public class City {
-	private Forecast forecast = new Forecast();
-	private String cityName=null;
 	
+	//VARIABLES
+	private Forecast forecast = new Forecast();
+	private String cityName = null;
+	
+	
+	//GETTERS Y SETTERS
 	public Forecast getForecast() {
 		return forecast;
 	}
@@ -19,9 +23,5 @@ public class City {
 	public void setCityName(String cityName) {
 		this.cityName = cityName;
 	}
-	
-	
-	
-
 	
 }

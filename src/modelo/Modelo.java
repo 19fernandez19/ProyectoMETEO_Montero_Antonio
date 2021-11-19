@@ -20,27 +20,27 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import vista.Vista;
 
 public class Modelo {
-	
-	
-	//Esta clase busca la URL en el .properties y vuelca la informacion en la clase JAVA
+
+	//ESTA METODO BUSCA LA URL EN EL .PROPERTIES Y VUELCA LA INFORMACI�N EN LA CLASE JAVA
 	
 	public Objeto buscarDatos(String ciudad) throws FileNotFoundException, IOException {
+		
 		Objeto object = null;
 		
 		try { 
-			//Creamos un fichero y le pasamos la direccion del .properties
+			//CREAMOS UN FICHERO Y LE PASAMOS LA DIRECCION DEL .PROPERTIES
 			File fichero = new File("src\\files\\datos.properties");
 			
-			//Creamos un properties y le mandamos la direccion del properties
+			//CREAMOS UN PROPERTIES Y LE MANDAMOS LA DIRECCION DEL PROPERTIES
 			Properties config = new Properties();
 			config.load(new FileReader(fichero));
 			
-			//Buscamos la URL y la guardamos en un String JAVA
+			//BUSCAMOS LA URL Y LA GUARDAMOS EN UN STRING JAVA
 			String url = config.getProperty(ciudad);
 			
-			//Creamos un ObjectMapper y le pasamos el contenido de la URl y el objeto JAVA donde se guarda la informacion
+			//CREAMOS UN OBJECTMAPPER Y LE PASAMOS EL CONTENIDO DE LA URL Y EL OBJETO JAVA DONDE SE GUARDA LA INFORMACI�N
 			ObjectMapper mapper = new ObjectMapper();
-			object = mapper.readValue(obtenerCodigoFuente(url), modelo.Objeto.class);
+			object = mapper.readValue(lecturaURL(url), modelo.Objeto.class);
 			
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -49,8 +49,8 @@ public class Modelo {
 
 	 }
 	 
-	//Este metodo sirve para buscar la URL en el .properties
-	public String obtenerCodigoFuente(String url) throws IOException{
+	//ESTE METODO SIRVE PARA BUSCAR LA URL EN EL .PROPERTIES
+	public String lecturaURL(String url) throws IOException{
 	     URL urlpagina = null;
 	     InputStreamReader inputStreamReader = null;
 	     BufferedReader br = null;
@@ -58,21 +58,21 @@ public class Modelo {
 	     StringBuffer buffer = new StringBuffer();
 
 	     try {
-	    	 //Guardamos la URL en un objeto de tipo URL
+	    	 //GUARDAMOS LA URL EN UN OBJETO DE TIPO URL
 			 urlpagina = new URL(url);
 			   
-			 //Le pasamos la URL a un InputStreamReader
+			 //LE PASAMOS LA URL A UN INPUTSTREAMREADER
 			 inputStreamReader = new InputStreamReader(urlpagina.openStream());
 			  
-			 //Pasamos el InputStreamReader a un BufferReader para realizar la lectura
+			 //PASAMOS EL INPUTSTREAMREADER A UN BUFFERREADER PARA REALIZAR LA LECTURA
 			 br = new BufferedReader(inputStreamReader);
-			   
-			 //Guardamos la lectura del BufferReader en un Buffer
+
+			 //GUARDAMOS LA LECTURA DEL BUFFERREADER EN UN BUFFER
 			 while ((linea = br.readLine()) != null){	   
 				   buffer.append(linea);
 			   }
 			   
-			 //Cerramos el BufferReader y el InputStreamReader
+			 //CERRAMOS EL BUFFERREADER Y EL INPUTSTREAMREADER
 			   br.close();
 			   inputStreamReader.close();
 			   
