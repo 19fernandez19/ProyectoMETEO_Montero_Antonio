@@ -17,11 +17,12 @@ import modelo.Modelo;
 import modelo.Objeto;
 import vista.Vista;
 
-public class Controlador {
+public class Controlador implements ActionListener{
 
 	static List<ForecastDay> dias = null;
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException{
+		
 		
 		//CREO LOS OBJETOS DE LAS CLASES MODELO, VISTA Y CONTROLADOR
 		Vista frame = new Vista();
@@ -35,6 +36,13 @@ public class Controlador {
 		control.buscarDias(frame, model, control);
 		
  	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 	//LLAMADA AL METODO "buscarDatos" DE LA CLASE MODELO Y A PARTIR DE LA ELECCI�N DEL COMBOBOX, LE PASA LA CIUDAD
 	public void buscarCiudades(Vista frame, Modelo model, Controlador control) {
@@ -369,4 +377,9 @@ public class Controlador {
 			}
 	
 	}
+
+
+
+	
+	
 }		

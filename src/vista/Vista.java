@@ -32,7 +32,7 @@ import javax.swing.border.MatteBorder;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JSeparator;
 
-public class Vista extends JFrame implements MouseListener{
+public class Vista extends JFrame {
 
 	private JPanel contentPane;
 	public JComboBox<String> comboBox;
@@ -294,6 +294,8 @@ public class Vista extends JFrame implements MouseListener{
 		panelDia2.setBorder(null);
 		
 		mañana = new JTextField();
+		mañana.setEditable(false);
+		mañana.setEnabled(false);
 		mañana.setText("MAÑANA");
 		mañana.setHorizontalAlignment(SwingConstants.CENTER);
 		mañana.setBackground(new Color(255, 255, 255));
@@ -301,7 +303,6 @@ public class Vista extends JFrame implements MouseListener{
 		mañana.setBorder(null);
 		panelDia2.add(mañana);
 		mañana.setFont(new Font("Agency FB", Font.BOLD, 30));
-		mañana.setEditable(false);
 		mañana.setColumns(10);
 		
 		textRTMax2 = new JTextField();
@@ -364,6 +365,7 @@ public class Vista extends JFrame implements MouseListener{
 		panelDias.add(panelDia3);
 		
 		dia3 = new JTextField();
+		dia3.setEnabled(false);
 		dia3.setHorizontalAlignment(SwingConstants.CENTER);
 		dia3.setFont(new Font("Agency FB", Font.BOLD, 30));
 		dia3.setEditable(false);
@@ -429,6 +431,7 @@ public class Vista extends JFrame implements MouseListener{
 		panelDias.add(panelDia4);
 		
 		dia4 = new JTextField();
+		dia4.setEnabled(false);
 		dia4.setHorizontalAlignment(SwingConstants.CENTER);
 		dia4.setFont(new Font("Agency FB", Font.BOLD, 30));
 		dia4.setEditable(false);
@@ -490,42 +493,42 @@ public class Vista extends JFrame implements MouseListener{
 		 */
 		labelIconoCiudadReal = new JLabel("");
 		panelMapa.add(labelIconoCiudadReal);
-		labelIconoCiudadReal.addMouseListener(this);
+		//labelIconoCiudadReal.addMouseListener(this);
 		labelIconoCiudadReal.setBounds(240, 280, 70, 80);
 		
 		labelIconoOviedo = new JLabel("");
 		panelMapa.add(labelIconoOviedo);
-		labelIconoOviedo.addMouseListener(this);
+		//labelIconoOviedo.addMouseListener(this);
 		labelIconoOviedo.setBounds(150, 10, 70, 80);
 		
 		labelIconoBarcelona = new JLabel("");
 		labelIconoBarcelona.setBounds(515, 120, 70, 80);
-		labelIconoBarcelona.addMouseListener(this);
+		//labelIconoBarcelona.addMouseListener(this);
 		panelMapa.add(labelIconoBarcelona);
 		
 		labelIconoMadrid = new JLabel("");
 		labelIconoMadrid.setBounds(250, 180, 70, 80);
-		labelIconoMadrid.addMouseListener(this);
+		//labelIconoMadrid.addMouseListener(this);
 		panelMapa.add(labelIconoMadrid);
 		
 		labelIconoBenidorm = new JLabel("");
 		labelIconoBenidorm.setBounds(410, 290, 70, 80);
-		labelIconoBenidorm.addMouseListener(this);
+		//labelIconoBenidorm.addMouseListener(this);
 		panelMapa.add(labelIconoBenidorm);
 		
 		labelIconoSevilla = new JLabel("");
 		labelIconoSevilla.setBounds(160, 360, 70, 80);
-		labelIconoSevilla.addMouseListener(this);
+		//labelIconoSevilla.addMouseListener(this);
 		panelMapa.add(labelIconoSevilla);
 		
 		labelIconoValladolid = new JLabel("");
 		labelIconoValladolid.setBounds(200, 115, 70, 80);
-		labelIconoValladolid.addMouseListener(this);
+		//labelIconoValladolid.addMouseListener(this);
 		panelMapa.add(labelIconoValladolid);
 		
 		labelIconoZaragoza = new JLabel("");
 		labelIconoZaragoza.setBounds(360, 110, 70, 80);
-		labelIconoZaragoza.addMouseListener(this);
+		//labelIconoZaragoza.addMouseListener(this);
 		panelMapa.add(labelIconoZaragoza);
 		
 		textSpain = new JLabel("MAPA DE ESPAÑA");
@@ -619,7 +622,7 @@ public class Vista extends JFrame implements MouseListener{
 		
 	}
 
-	//EVENTOS DEL MOUSE LISTENER
+	/*EVENTOS DEL MOUSE LISTENER
 	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
@@ -682,5 +685,5 @@ public class Vista extends JFrame implements MouseListener{
 	public void mouseReleased(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		
-	}
+	}*/
 }
